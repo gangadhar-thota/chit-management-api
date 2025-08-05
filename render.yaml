@@ -1,0 +1,11 @@
+services:
+  - type: web
+    name: chit-management-api
+    runtime: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: uvicorn main:app --host 0.0.0.0 --port 10000
+    envVars:
+      - key: PORT
+        value: 10000
+      - key: DATABASE_URL
+        value: mysql+mysqlconnector://3344CVREJNRSf9G.root:5B3sQqAF9GqPbiXv@gateway01.ap-southeast-1.prod.aws.tidbcloud.com:4000/chit_management_dev
